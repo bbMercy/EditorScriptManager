@@ -35,7 +35,7 @@ func get_all_dirs(filesystem:EditorFileSystemDirectory)->Array[EditorFileSystemD
 
 
 ## gets all instances of your EditorScripts in your project directory, and adds them to two lookup arrays:
-##  one for the EditorScripts name, and the other for its absolute proejct path.
+##  one for the EditorScripts name, and the other for its absolute project path.
 func get_editor_scripts()->void:
 	editorscript_filepath.clear()
 	editorscript_name.clear()
