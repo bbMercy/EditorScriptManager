@@ -11,7 +11,7 @@ var editorscript_name:Array[String]
 
 
 ## adds the button to the editor, connects needed signals to functions
-func _ready()->void:
+func _enter_tree() -> void:
 	if run_button:
 		return
 	run_button=MenuButton.new()
@@ -20,7 +20,12 @@ func _ready()->void:
 	add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR,run_button)
 	run_button.connect("about_to_popup",get_editor_scripts)
 	run_button.get_popup().connect("index_pressed",run_editor_script)
-	
+
+
+## removes the button from the editor toolbar
+func _exit_tree() -> void:
+	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, run_button)
+	run_button.free()
 
 		
 ## recursive get directories function
